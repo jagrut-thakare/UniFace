@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    ckpt = torch.load(args.ckpt, weights_only=False)
+    ckpt = torch.load(args.ckpt)
     train_args = ckpt["train_args"]
     for key in vars(train_args):
         if not (key in vars(args)):
