@@ -7,7 +7,8 @@ This work is licensed under the Creative Commons Attribution-NonCommercial
 http://creativecommons.org/licenses/by-nc/4.0/ or send a letter to
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 """
-
+import os
+os.environ["TORCH_CUDA_ARCH_LIST"] = "7.5"
 import argparse
 import pickle
 import torch
@@ -21,7 +22,7 @@ from training.dataset import *
 from scipy import linalg
 import random
 import time
-import os
+
 from tqdm import tqdm
 from copy import deepcopy
 import cv2
@@ -30,7 +31,6 @@ from itertools import combinations
 # need to modify
 from training.model import Generator_globalatt_return_32 as Generator
 from training.model import Encoder_return_32 as Encoder
-os.environ["TORCH_CUDA_ARCH_LIST"] = "7.5"
 
 random.seed(0)
 torch.manual_seed(0)
